@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cream / off-white palette */
+  --color-cream: #F4EFE3;
+  --color-cream-50: #FAF7EE;
+  --color-cream-100: #F4EFE3;
+  --color-cream-200: #ECE5D2;
+  --color-cream-300: #DBD2BA;
+
+  /* Deep navy — "so dark it looks black, but blue" */
+  --color-ink: #0D1B2A;
+  --color-ink-soft: #14243A;
+  --color-ink-muted: #2A3A55;
+  --color-ink-line: #C9C0A8;
+
+  /* Accents */
+  --color-accent: #1B2845;
+  --color-accent-hover: #243557;
+
+  --font-display: "Fraunces", "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --tracking-luxe: 0.18em;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-cream);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+@utility tracking-luxe {
+  letter-spacing: 0.18em;
+}
+
+@utility marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes seal-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@utility seal-spin {
+  animation: seal-rotate 40s linear infinite;
+}
