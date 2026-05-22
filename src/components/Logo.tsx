@@ -13,7 +13,7 @@ export function Logo({ variant = 'dark' }: Props) {
         <path d="M24 33 L24 40" />
       </svg>
       <span className="font-display text-xl leading-none tracking-tight">
-        elite estate
+        Elite Estate Management
         <span className="ml-1 text-[0.62em] tracking-luxe uppercase opacity-70">LA</span>
       </span>
     </Link>

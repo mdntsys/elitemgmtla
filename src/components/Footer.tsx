@@ -15,10 +15,10 @@ export function Footer() {
               </h2>
             </div>
             <a
-              href="mailto:sales@eliteestatemanagementla.com"
+              href="mailto:sales@elitemgmtla.com"
               className="font-display text-2xl md:text-3xl text-cream hover:opacity-80 transition-opacity"
             >
-              sales@eliteestatemanagementla.com
+              sales@elitemgmtla.com
             </a>
           </div>
         </div>

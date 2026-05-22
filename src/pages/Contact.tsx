@@ -19,7 +19,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterest: ${form.interest}\n\n${form.message}`,
     )
-    window.location.href = `mailto:sales@eliteestatemanagementla.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:sales@elitemgmtla.com?subject=${subject}&body=${body}`
   }
 
   return (
@@ -47,10 +47,10 @@ export default function Contact() {
           <div>
             <p className="text-xs tracking-luxe uppercase text-ink/60">Email</p>
             <a
-              href="mailto:sales@eliteestatemanagementla.com"
+              href="mailto:sales@elitemgmtla.com"
               className="mt-3 inline-block font-display text-2xl md:text-3xl text-ink hover:opacity-70 transition-opacity"
             >
-              sales@eliteestatemanagementla.com
+              sales@elitemgmtla.com
             </a>
           </div>
           <div>
