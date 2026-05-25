@@ -24,7 +24,13 @@ export function Footer() {
         </div>
       </section>
 
-      <Marquee text="Elevate your home. Live without limits." />
+      <Marquee
+        phrases={[
+          'Elevate your home. Live without limits.',
+          'Documented. Scheduled. Anticipated.',
+          'Every detail accounted for. Nothing left to chance.',
+        ]}
+      />
 
       <section className="bg-ink-soft text-cream/70">
         <div className="mx-auto max-w-[1600px] px-6 py-10 md:px-10 md:py-12">

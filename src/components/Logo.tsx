@@ -5,7 +5,7 @@ type Props = { variant?: 'dark' | 'light' }
 export function Logo({ variant = 'dark' }: Props) {
   const color = variant === 'dark' ? 'text-ink' : 'text-cream'
   return (
-    <Link to="/" className={`flex items-center gap-3 ${color}`} aria-label="Elite Estate Management LA — Home">
+    <Link to="/" className={`flex items-center gap-3 ${color}`} aria-label="Elite Estate Management LA, Home">
       <svg viewBox="0 0 48 48" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.2">
         <path d="M6 22 L24 8 L42 22" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M10 22 L10 40 L38 40 L38 22" strokeLinecap="round" strokeLinejoin="round" />

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { ArrowButton } from '../components/ArrowButton'
-import { ScrollArt } from '../components/ScrollArt'
 import { SectionDivider } from '../components/SectionDivider'
 import { services } from '../data/services'
 
@@ -46,7 +45,7 @@ export default function Home() {
                 className="mt-8 text-xs md:text-sm tracking-luxe uppercase opacity-95"
                 style={{ textShadow: '0 1px 12px rgba(0,0,0,0.55)' }}
               >
-                Because time is your most valuable commodity
+                A management organization dedicated to homes, households, and the lives lived inside them.
               </p>
               <div className="mt-10">
                 <ArrowButton label="Reach out" to="/contact" variant="light" />
@@ -73,7 +72,7 @@ export default function Home() {
               We provide full-service home and estate management for Los Angeles
               households whose lives are full, fast-moving, and high-functioning.
               Whether you are home or away, we bring structure, oversight, and
-              quiet ease to every part of your property — so it runs exactly as
+              quiet ease to every part of your property, so it runs exactly as
               it should. We manage the details that do not belong on your calendar:
               coordinating vendors, overseeing maintenance, preparing the home for
               your arrival, and resolving the unexpected before it reaches your day.
@@ -82,9 +81,20 @@ export default function Home() {
               <ArrowButton label="Explore services" to="/services" />
             </div>
           </motion.div>
-          <div className="flex justify-center md:justify-end">
-            <ScrollArt />
-          </div>
+          <motion.div
+            className="flex justify-center md:justify-end"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-120px' }}
+            transition={{ duration: 1.1, ease: 'easeOut' }}
+          >
+            <img
+              src="/estate-pool.jpg"
+              alt="Modern hillside estate with lap pool and ocean view"
+              className="w-full max-w-[460px] aspect-[4/5] object-cover"
+              loading="lazy"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -97,11 +107,11 @@ export default function Home() {
           style={{ backgroundImage: `url(${SUNSET_IMG})` }}
         >
           <div className="absolute inset-0 bg-ink/55" />
-          <div className="absolute inset-0 mx-auto flex max-w-[1600px] flex-col justify-between px-6 md:px-10 py-10 md:py-16">
+          <div className="absolute inset-0 mx-auto flex max-w-[1600px] flex-col px-6 md:px-10 py-10 md:py-16">
             <p className="text-xs tracking-luxe uppercase text-cream/80">About</p>
-            <div className="md:max-w-2xl md:self-end md:text-right">
+            <div className="mt-6 md:max-w-2xl">
               <h2 className="font-display text-cream text-4xl md:text-6xl leading-[1.05]">
-                Meet Elite Estate
+                What makes us Elite
               </h2>
               <div className="mt-4 h-px w-full bg-cream/30" />
             </div>
@@ -117,7 +127,7 @@ export default function Home() {
                 private households across Los Angeles.
               </p>
               <p className="mt-8 text-base md:text-lg leading-relaxed text-ink/75 max-w-xl">
-                We understand what excellence looks like — and how quietly it is
+                We understand what excellence looks like, and how quietly it is
                 delivered. From seasonal preparation to system maintenance,
                 renovation oversight to arrival setup, our work is tailored to your
                 property, your lifestyle, and the way you like things done.
@@ -149,11 +159,11 @@ export default function Home() {
         className="relative bg-cover bg-center py-24 md:py-32"
         style={{ backgroundImage: `url(${INTERIOR_IMG})` }}
       >
-        <div className="absolute inset-0 bg-cream/82" />
+        <div className="absolute inset-0 bg-cream/65" />
         <div className="relative mx-auto max-w-[1600px] px-6 md:px-10">
           <p className="text-xs tracking-luxe uppercase text-ink/70">How it works</p>
           <h2 className="mt-6 font-display text-4xl md:text-6xl leading-[1.05] text-ink max-w-3xl">
-            A measured beginning, then a household that simply runs.
+            We listen, and then we deliver.
           </h2>
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -164,7 +174,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
-                className="bg-ink text-cream p-8 md:p-10"
+                className="bg-ink/85 backdrop-blur-md text-cream p-8 md:p-10"
               >
                 <p className="text-xs tracking-luxe uppercase text-cream/60">
                   {step.n}
@@ -201,8 +211,8 @@ const STEPS = [
   },
   {
     n: '03',
-    title: 'Quiet stewardship begins',
+    title: 'Operations begin',
     body:
-      'We build a tailored management plan and step in — coordinating vendors, overseeing operations, and freeing your calendar.',
+      'We build a tailored management plan and step in, coordinating vendors, overseeing operations, and freeing your calendar.',
   },
 ]

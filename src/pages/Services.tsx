@@ -4,8 +4,7 @@ import { Mark } from '../components/Mark'
 import { SectionDivider } from '../components/SectionDivider'
 import { services } from '../data/services'
 
-const HERO_IMG =
-  'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2400&q=80'
+const HERO_IMG = '/services-hero.jpg'
 
 export default function Services() {
   return (
@@ -20,7 +19,7 @@ export default function Services() {
             <div className="absolute inset-0 bg-ink/35" />
             <div className="absolute inset-0 mx-auto flex max-w-[1600px] items-end px-6 md:px-10 pb-10 md:pb-16">
               <h1 className="font-display text-cream text-5xl md:text-7xl lg:text-8xl leading-[1.0]">
-                Services<br /><span className="italic">in Detail</span>
+                Our <span className="italic">Elite</span> Services
               </h1>
             </div>
             <div className="absolute right-6 md:right-10 top-10 md:top-14">
@@ -40,17 +39,16 @@ export default function Services() {
           className="max-w-3xl"
         >
           <h2 className="font-display text-3xl md:text-5xl leading-[1.1] text-ink">
-            The rarest luxury isn't square footage or finishes;
-            it's <span className="italic">time</span>.
+            Your life, Our <span className="italic">priority</span>.
           </h2>
           <p className="mt-8 text-xs tracking-luxe uppercase text-ink/70">
-            Our role is to give you more of it
+            Run by us, lived by you
           </p>
           <p className="mt-8 text-base md:text-lg leading-relaxed text-ink/75 max-w-xl">
-            We manage the details that do not belong on your calendar: coordinating
-            vendors, overseeing maintenance, preparing your home for arrival, and
+            We manage the details of your life: coordinating vendors,
+            overseeing maintenance, preparing your home for arrival, and
             handling the unexpected with calm precision. Whether you are in residence
-            or away, we act as a trusted extension of your household — keeping the
+            or away, we act as a trusted extension of your household, keeping the
             property protected, prepared, and beautifully in sync with your life.
           </p>
         </motion.div>
@@ -58,57 +56,77 @@ export default function Services() {
 
       <SectionDivider number="01" label="services" direction="down" />
 
-      {/* WHERE WE BEGIN */}
-      <section className="bg-cream-200/40 py-20 md:py-28">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 text-center">
-          <h2 className="font-display text-4xl md:text-6xl leading-[1.05] text-ink">
-            Where We Begin
+      {/* 24/7 BAND */}
+      <section className="bg-ink text-cream">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-10 py-10 md:py-14 text-center">
+          <p className="text-xs tracking-luxe uppercase text-cream/60">
+            Around the clock
+          </p>
+          <h2 className="mt-3 font-display text-3xl md:text-5xl leading-[1.05]">
+            24/7 On-Demand Support
           </h2>
-          <p className="mt-4 text-xs tracking-luxe uppercase text-ink/60">
-            These are the building blocks — your needs shape the plan
+          <p className="mx-auto mt-4 max-w-xl text-sm md:text-base leading-relaxed text-cream/75">
+            However the day unfolds, someone is already on it. A direct line
+            to your household, day or night, in residence or away.
           </p>
         </div>
+      </section>
 
-        <div className="mx-auto mt-20 max-w-[1600px] px-6 md:px-10">
-          <div className="grid grid-cols-1 gap-y-20 md:gap-y-28">
-            {services.map((s, i) => (
-              <motion.article
-                key={s.slug}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-                className="grid gap-10 md:grid-cols-[180px_1fr_1fr] md:gap-16 border-t border-ink/15 pt-12"
-              >
-                <div>
-                  <p className="font-display text-ink/60 text-xl">
-                    {String(i + 1).padStart(2, '0')}
-                  </p>
-                  <p className="mt-3 text-xs tracking-luxe uppercase text-ink">
-                    {s.label}
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-display text-2xl md:text-4xl leading-[1.15] text-ink">
-                    {s.short}
-                  </h3>
-                  <p className="mt-6 text-base leading-relaxed text-ink/75">
-                    {s.description}
-                  </p>
-                </div>
-                <ul className="space-y-3 self-center">
-                  {s.details.map((d) => (
-                    <li
-                      key={d}
-                      className="flex gap-3 text-sm text-ink/80 leading-snug"
-                    >
-                      <span className="mt-2 inline-block h-px w-3 flex-none bg-ink/40" />
-                      <span>{d}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.article>
-            ))}
+      {/* SERVICES */}
+      <section className="bg-cream-200/40 py-20 md:py-28">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-10">
+          <div className="grid grid-cols-1 gap-y-24 md:gap-y-36">
+            {services.map((s, i) => {
+              const imageRight = i % 2 === 0
+              return (
+                <motion.article
+                  key={s.slug}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.7, ease: 'easeOut' }}
+                  className="grid items-center gap-10 md:grid-cols-2 md:gap-20"
+                >
+                  <div className={imageRight ? 'md:order-1' : 'md:order-2'}>
+                    <h2 className="font-display text-3xl md:text-5xl leading-[1.1] text-ink">
+                      {s.label}
+                    </h2>
+                    <h3 className="mt-5 font-display text-xl md:text-2xl leading-snug text-ink/75 max-w-md">
+                      {s.short}
+                    </h3>
+                    <ul className="mt-10 space-y-3">
+                      {s.details.map((d) => (
+                        <li
+                          key={d}
+                          className="flex gap-3 text-sm md:text-base text-ink/80 leading-snug"
+                        >
+                          <span className="mt-2 inline-block h-px w-3 flex-none bg-ink/40" />
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div
+                    className={`${imageRight ? 'md:order-2' : 'md:order-1'} aspect-[4/5] w-full overflow-hidden bg-cream-300`}
+                  >
+                    {s.image ? (
+                      <img
+                        src={s.image}
+                        alt={s.label}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center">
+                        <span className="text-xs tracking-luxe uppercase text-ink/40">
+                          Image: {s.label}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </motion.article>
+              )
+            })}
           </div>
         </div>
       </section>

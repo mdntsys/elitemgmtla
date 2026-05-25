@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Mark } from '../components/Mark'
 import { SectionDivider } from '../components/SectionDivider'
 
 const HERO_IMG =
@@ -9,7 +8,7 @@ const INTERIOR_IMG =
 
 const VALUES = [
   {
-    label: 'Discretion',
+    label: 'Intentional',
     body:
       'Our work is invisible by design. Households we serve are protected by NDAs, vetted teams, and decades of experience with privacy at scale.',
   },
@@ -21,13 +20,20 @@ const VALUES = [
   {
     label: 'Anticipation',
     body:
-      'We do not wait for problems to surface. The work that matters most is the work you never see — issues caught and resolved before they reach you.',
+      'We do not wait for problems to surface. The work that matters most is the work you never see: issues caught and resolved before they reach you.',
   },
   {
-    label: 'Restraint',
+    label: 'Care',
     body:
-      'A well-run home is a quiet one. Our presence is intentional, our communication considered, our footprint deliberately light.',
+      'Every home in our care is held as if it were our own. The household, the property, and the lives inside receive the attention we would give ours.',
   },
+]
+
+const TEAM = [
+  { name: 'Name One', role: 'Founder & Principal' },
+  { name: 'Name Two', role: 'Estate Director' },
+  { name: 'Name Three', role: 'Operations Lead' },
+  { name: 'Name Four', role: 'Client Concierge' },
 ]
 
 export default function About() {
@@ -44,7 +50,7 @@ export default function About() {
               <div className="max-w-3xl">
                 <p className="text-xs tracking-luxe uppercase text-cream/80">About</p>
                 <h1 className="mt-6 font-display text-cream text-5xl md:text-7xl leading-[1.0]">
-                  An old-world approach<br />to the modern household.
+                  Concierge attention.<br />Selfless service.
                 </h1>
               </div>
             </div>
@@ -54,20 +60,19 @@ export default function About() {
 
       {/* MISSION */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pt-24 md:pt-32">
-        <div className="grid gap-16 md:grid-cols-[1fr_auto] md:gap-24">
+        <div className="grid gap-16 md:grid-cols-2 md:gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
-            className="max-w-3xl"
           >
             <h2 className="font-display text-3xl md:text-5xl leading-[1.1] text-ink">
               Elite Estate Management is a private operations firm, built for
               Los Angeles households where the cost of friction is high.
             </h2>
             <p className="mt-10 text-base md:text-lg leading-relaxed text-ink/75 max-w-xl">
-              We exist for principals whose attention is in demand elsewhere —
+              We exist for principals whose attention is in demand elsewhere:
               families, founders, executives, and creative leaders who require a
               home that simply works. Our team manages the vendors, the staff,
               the systems, and the small fires, so the household is never the
@@ -78,8 +83,10 @@ export default function About() {
               deliberately quiet about the homes in our care.
             </p>
           </motion.div>
-          <div className="flex items-start justify-end pt-2">
-            <Mark />
+          <div className="aspect-[4/5] w-full bg-cream-300 flex items-center justify-center">
+            <span className="text-xs tracking-luxe uppercase text-ink/40">
+              Image: About — mission
+            </span>
           </div>
         </div>
       </section>
@@ -132,9 +139,45 @@ export default function About() {
             Our standard
           </p>
           <p className="mt-8 font-display text-cream text-3xl md:text-5xl leading-[1.15] max-w-4xl">
-            "A private home should feel like a quiet system — anticipating you,
-            adapting to you, and asking nothing of you in return."
+            "A private home should feel like a quiet system that anticipates you,
+            adapts to you, and asks nothing of you in return."
           </p>
+        </div>
+      </section>
+
+      {/* TEAM */}
+      <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-32">
+        <div className="max-w-3xl">
+          <p className="text-xs tracking-luxe uppercase text-ink/60">
+            Leadership
+          </p>
+          <h2 className="mt-6 font-display text-4xl md:text-6xl leading-[1.05] text-ink">
+            The Elite Team
+          </h2>
+        </div>
+
+        <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-x-16 md:gap-y-20">
+          {TEAM.map((member) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
+              <div className="aspect-[4/5] w-full bg-cream-300 flex items-center justify-center">
+                <span className="text-xs tracking-luxe uppercase text-ink/40">
+                  Image: {member.name}
+                </span>
+              </div>
+              <h3 className="mt-6 font-display text-2xl md:text-3xl text-ink">
+                {member.name}
+              </h3>
+              <p className="mt-2 text-xs tracking-luxe uppercase text-ink/60">
+                {member.role}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </section>
 

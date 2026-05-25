@@ -14,7 +14,7 @@ export default function Contact() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault()
     const subject = encodeURIComponent(
-      `Inquiry — ${form.interest} — ${form.name || 'Prospective client'}`,
+      `Inquiry: ${form.interest} (${form.name || 'Prospective client'})`,
     )
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nInterest: ${form.interest}\n\n${form.message}`,
@@ -56,12 +56,11 @@ export default function Contact() {
           <div>
             <p className="text-xs tracking-luxe uppercase text-ink/60">Telephone</p>
             <a
-              href="tel:+13105550100"
+              href="tel:+16612891491"
               className="mt-3 inline-block font-display text-2xl md:text-3xl text-ink hover:opacity-70 transition-opacity"
             >
-              +1 (310) 555-0100
+              +1 (661) 289-1491
             </a>
-            <p className="mt-2 text-xs text-ink/50">Placeholder — swap with live number</p>
           </div>
           <div>
             <p className="text-xs tracking-luxe uppercase text-ink/60">Office</p>
@@ -109,13 +108,13 @@ export default function Contact() {
               onChange={(e) => setForm({ ...form, interest: e.target.value })}
               className="w-full border-b border-ink/30 bg-transparent py-3 text-ink font-display text-lg focus:border-ink focus:outline-none"
             >
+              <option>Full-service management</option>
               <option>Property Care</option>
               <option>Vendor Management</option>
               <option>Private Concierge</option>
-              <option>Domestic Staffing</option>
+              <option>Internal Staffing Solutions</option>
               <option>Transportation & Travel</option>
               <option>Private Jet Chartering</option>
-              <option>Full-service management</option>
               <option>Other</option>
             </select>
           </div>
