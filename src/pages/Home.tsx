@@ -57,7 +57,7 @@ export default function Home() {
 
       {/* INTRO STATEMENT */}
       <section className="mx-auto max-w-[1600px] px-6 md:px-10 pt-24 md:pt-32">
-        <div className="grid gap-16 md:grid-cols-2 md:gap-24 items-start">
+        <div className="grid gap-16 md:grid-cols-[1.4fr_1fr] md:gap-24 items-start">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,8 +65,8 @@ export default function Home() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
           >
             <h2 className="font-display text-3xl md:text-5xl lg:text-6xl leading-[1.1] text-ink">
-              Elite Estate Management keeps your home running quietly,
-              so you can focus on everything else.
+              Elite Estate Management absorbs the work of running an estate,
+              so nothing about home ever becomes a source of stress.
             </h2>
             <p className="mt-10 max-w-xl text-base md:text-lg leading-relaxed text-ink/75">
               We provide full-service home and estate management for Los Angeles
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionDivider number="01" label="about us" to="/about" direction="down" />
+      <SectionDivider label="about us" to="/about" direction="down" />
 
       {/* ABOUT BAND with parallax-ish image */}
       <section className="relative">
@@ -152,7 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionDivider number="02" label="explore services" to="/services" direction="right" />
+      <SectionDivider label="explore services" to="/services" direction="right" />
 
       {/* HOW IT WORKS */}
       <section
@@ -191,7 +191,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionDivider number="03" label="get in touch" to="/contact" direction="right" />
+      <SectionDivider label="get in touch" to="/contact" direction="right" />
     </>
   )
 }

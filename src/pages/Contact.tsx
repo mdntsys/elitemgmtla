@@ -32,7 +32,7 @@ export default function Contact() {
       >
         <p className="text-xs tracking-luxe uppercase text-ink/60">Contact</p>
         <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[1.05] text-ink">
-          Reach out.
+          Connect with us.
         </h1>
         <p className="mt-8 text-base md:text-lg leading-relaxed text-ink/75 max-w-xl">
           Every engagement begins with a private conversation. Share a little about

@@ -8,8 +8,8 @@ export function Footer() {
         <div className="mx-auto max-w-[1600px] px-6 py-20 md:px-10 md:py-28">
           <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs tracking-luxe uppercase text-cream/60 mb-6">Reach out</p>
-              <h2 className="font-display text-5xl md:text-7xl leading-[1.05]">
+              <p className="text-xs tracking-luxe uppercase text-cream/60 mb-6">Connect with us</p>
+              <h2 className="font-display text-5xl md:text-7xl leading-[1.15] pb-1">
                 Begin the<br />
                 conversation.
               </h2>

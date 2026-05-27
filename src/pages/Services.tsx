@@ -54,7 +54,7 @@ export default function Services() {
         </motion.div>
       </section>
 
-      <SectionDivider number="01" label="services" direction="down" />
+      <SectionDivider label="services" direction="down" />
 
       {/* 24/7 BAND */}
       <section className="bg-ink text-cream">

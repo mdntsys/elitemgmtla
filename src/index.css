@@ -18,8 +18,8 @@
   --color-accent: #1B2845;
   --color-accent-hover: #243557;
 
-  --font-display: "Fraunces", "Cormorant Garamond", "Times New Roman", serif;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
   --tracking-luxe: 0.18em;
 }

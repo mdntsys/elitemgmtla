@@ -30,10 +30,36 @@ const VALUES = [
 ]
 
 const TEAM = [
-  { name: 'Name One', role: 'Founder & Principal' },
-  { name: 'Name Two', role: 'Estate Director' },
-  { name: 'Name Three', role: 'Operations Lead' },
-  { name: 'Name Four', role: 'Client Concierge' },
+  {
+    name: 'Noah Alvarez',
+    role: 'Founder & Principal',
+    image: '/team/noah.jpg',
+    bio: 'Founded Elite to bring real rigor to private estate management. Sets the standard the team is held to, and the principal’s first call.',
+  },
+  {
+    name: 'Mary Jackson',
+    role: 'Estate Director',
+    image: '',
+    bio: 'Two decades inside private households. Runs daily operations with a precision that catches what others miss, long before it reaches the principal.',
+  },
+  {
+    name: 'Nicolas Perez',
+    role: 'Director of Client Experience',
+    image: '',
+    bio: 'The bridge between principal and team. Translates each client’s standards into the way the home is run, every day, without exception.',
+  },
+  {
+    name: 'Brenda Lozano',
+    role: 'Client Concierge',
+    image: '',
+    bio: 'Lives in the details. Schedules, vendors, and the personal requests that turn a residence into a household.',
+  },
+  {
+    name: 'Michael Alvarez',
+    role: 'VP of Strategic Planning',
+    image: '',
+    bio: 'Plans the long horizon. Budgets, staffing, succession, and the moves that matter most three years out.',
+  },
 ]
 
 export default function About() {
@@ -68,8 +94,9 @@ export default function About() {
             transition={{ duration: 0.9, ease: 'easeOut' }}
           >
             <h2 className="font-display text-3xl md:text-5xl leading-[1.1] text-ink">
-              Elite Estate Management is a private operations firm, built for
-              Los Angeles households where the cost of friction is high.
+              Our mission is simple: deliver uncompromising peace of mind by
+              managing every detail of our clients' estates with integrity,
+              discretion, and excellence.
             </h2>
             <p className="mt-10 text-base md:text-lg leading-relaxed text-ink/75 max-w-xl">
               We exist for principals whose attention is in demand elsewhere:
@@ -91,7 +118,7 @@ export default function About() {
         </div>
       </section>
 
-      <SectionDivider number="01" label="our values" direction="down" />
+      <SectionDivider label="our values" direction="down" />
 
       {/* VALUES */}
       <section className="bg-cream-200/40 py-20 md:py-28">
@@ -146,8 +173,8 @@ export default function About() {
       </section>
 
       {/* TEAM */}
-      <section className="mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-32">
-        <div className="max-w-3xl">
+      <section className="w-full px-6 md:px-10 py-24 md:py-32">
+        <div>
           <p className="text-xs tracking-luxe uppercase text-ink/60">
             Leadership
           </p>
@@ -156,7 +183,7 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-x-16 md:gap-y-20">
+        <div className="mt-16 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-6">
           {TEAM.map((member) => (
             <motion.div
               key={member.name}
@@ -164,24 +191,42 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
+              className="group relative aspect-[4/5] w-full overflow-hidden bg-cream-300"
             >
-              <div className="aspect-[4/5] w-full bg-cream-300 flex items-center justify-center">
-                <span className="text-xs tracking-luxe uppercase text-ink/40">
-                  Image: {member.name}
-                </span>
+              {member.image ? (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-xs tracking-luxe uppercase text-ink/40">
+                    {member.name}
+                  </span>
+                </div>
+              )}
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-500 group-hover:opacity-0" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-black/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                <h3 className="font-display text-lg md:text-xl text-white leading-tight">
+                  {member.name}
+                </h3>
+                <p className="mt-1 text-[10px] tracking-luxe uppercase text-white/70">
+                  {member.role}
+                </p>
+                <p className="mt-3 text-[12px] md:text-[13px] leading-relaxed text-white/30 transition-colors duration-500 group-hover:text-white/95">
+                  {member.bio}
+                </p>
               </div>
-              <h3 className="mt-6 font-display text-2xl md:text-3xl text-ink">
-                {member.name}
-              </h3>
-              <p className="mt-2 text-xs tracking-luxe uppercase text-ink/60">
-                {member.role}
-              </p>
             </motion.div>
           ))}
         </div>
       </section>
 
-      <SectionDivider number="02" label="begin a conversation" to="/contact" direction="right" />
+      <SectionDivider label="begin a conversation" to="/contact" direction="right" />
     </>
   )
 }
