@@ -40,7 +40,7 @@ const TEAM = [
     name: 'Mary Jackson',
     role: 'Estate Director',
     image: '',
-    bio: 'Two decades inside private households. Runs daily operations with a precision that catches what others miss, long before it reaches the principal.',
+    bio: 'Two decades inside private households. Runs daily operations with precision that catches what others miss before it reaches the principal.',
   },
   {
     name: 'Nicolas Perez',
@@ -110,11 +110,12 @@ export default function About() {
               deliberately quiet about the homes in our care.
             </p>
           </motion.div>
-          <div className="aspect-[4/5] w-full bg-cream-300 flex items-center justify-center">
-            <span className="text-xs tracking-luxe uppercase text-ink/40">
-              Image: About — mission
-            </span>
-          </div>
+          <img
+            src="/about-mission.jpg"
+            alt="A laptop, navy leather planner, espresso, and orchid on a travertine desk by a garden window"
+            className="aspect-[4/5] w-full object-cover"
+            loading="lazy"
+          />
         </div>
       </section>
 
@@ -183,7 +184,7 @@ export default function About() {
           </h2>
         </div>
 
-        <div className="mt-16 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 md:gap-6">
+        <div className="mt-16 grid gap-4 grid-cols-1 sm:grid-cols-3 md:grid-cols-5 md:gap-6">
           {TEAM.map((member) => (
             <motion.div
               key={member.name}
@@ -217,7 +218,7 @@ export default function About() {
                 <p className="mt-1 text-[10px] tracking-luxe uppercase text-white/70">
                   {member.role}
                 </p>
-                <p className="mt-3 text-[12px] md:text-[13px] leading-relaxed text-white/30 transition-colors duration-500 group-hover:text-white/95">
+                <p className="mt-3 text-[12px] md:text-[13px] leading-relaxed text-white/90 md:text-white/30 transition-colors duration-500 md:group-hover:text-white/95">
                   {member.bio}
                 </p>
               </div>
